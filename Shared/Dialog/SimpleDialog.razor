@@ -1,0 +1,16 @@
+<MudDialog>
+    <DialogContent>
+        <MudTextField T="string" Variant="Variant.Outlined" @bind-Value="@CardList" Lines="20" />
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">Ok</MudButton>
+    </DialogActions>
+</MudDialog>
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    public string CardList { get; set; }
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(CardList));
+    void Cancel() => MudDialog.Cancel();
+}

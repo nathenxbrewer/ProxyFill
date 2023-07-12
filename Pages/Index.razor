@@ -1,7 +1,115 @@
 ﻿@page "/"
+@using ProxyFill.ViewModel
+@inject IJSRuntime JSRuntime
+
+@code {
+
+    private void OnRemoveCard(ProxyCardViewModel card)
+    {
+        Cards.Remove(card);
+    }
+}
+
+@inject IDialogService DialogService
 
 <PageTitle>Index</PageTitle>
+<MudOverlay Visible="OverlayVisible" DarkBackground="true" Absolute="true">
+    <MudProgressCircular Color="Color.Secondary" Indeterminate="true" />
+</MudOverlay>
+@if (!ListSubmitted)
+{
+    <MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
+    <MudText Class="mb-8">Welcome to ProxyFill!</MudText>
+    <MudAlert Severity="Severity.Normal">
+        Please use PTCGO format, ie "1 Bulbasaur DET 1"
+    </MudAlert>
+    <MudItem>
+        <MudTextField T="string" Variant="Variant.Outlined" @bind-Value="@CardList" Lines="20"/>
+        <MudButton OnClick="OnSubmitClick" Variant="Variant.Filled">Submit</MudButton>
+    </MudItem>
+}
+else
 
-<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
-<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor!</MudText>
-<MudAlert Severity="Severity.Normal">You can find documentation and examples on our website here: <MudLink Href="https://mudblazor.com" Typo="Typo.body2" Color="Color.Inherit"><b>www.mudblazor.com</b></MudLink></MudAlert>
+{
+
+    <MudItem Class="mb-16">
+        <MudCard Style="background-color: #27272f">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">@ListName</MudText>
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudMenu Icon="@Icons.Material.Filled.MoreVert">
+                        <MudMenuItem OnClick="OnAddCardsClick">Add Cards</MudMenuItem>
+                        <MudMenuItem OnClick="OnRenameListClick">Rename List</MudMenuItem>
+                        <MudMenuItem OnClick="OnExportListClick">Export List</MudMenuItem>
+                    </MudMenu>
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCardContent>
+                <MudGrid>
+                    @foreach (var card in Cards)
+                    {
+                        <MudItem xs="6" sm="3">
+                            <MudPaper Class="d-flex align-center justify-center mud-width-full">
+                                <MudCard>
+                                    <MudCardHeader Class="pa-2">
+                                            <MudGrid Justify="Justify.SpaceBetween">
+                                                <MudItem xs="4">
+                                                    <MudMenu Icon="@Icons.Material.Filled.MoreVert">
+                                                        <MudMenuItem Href="https://www.google.com" Target="_blank">Request Card</MudMenuItem>
+                                                        <MudMenuItem>View on TCGPlayer</MudMenuItem>
+                                                    </MudMenu>
+                                                </MudItem>
+                                                <MudItem>
+                                                        <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="(() => OnRemoveCard(card))" Color="Color.Default"/>
+                                                </MudItem>
+                                            </MudGrid>
+                                    </MudCardHeader>
+                                    <MudCardContent Class="pa-2">
+                                        @if (card.FrontImage == null)
+                                        {
+                                            <img
+                                                referrerPolicy="no-referrer"
+                                                src="@(new GoogleDriveImage("Missing Art","MPCFill","14OSYdlqxV2KGKiHNLDPTBg4q2nrmmHHL").Thumbnail)"
+                                                Class="rounded-lg"
+                                                Height="350" Width="250"/>
+                                        }
+                                        else
+                                        {
+                                            <img
+                                                referrerPolicy="no-referrer"
+                                                src="@card.FrontImage.Thumbnail"
+                                                Class="rounded-lg"
+                                                Height="350" Width="250"/>
+                                        }
+                                        <MudText Align="Align.Center" Typo="Typo.body1">@card.Name (@card.SetCode) #@card.Number</MudText>
+                                        @if (card.FrontImage != null)
+                                        {
+                                            <MudGrid Justify="Justify.Center">
+                                                <MudItem xs="4" Class="mb-2 mt-2">
+                                                    <MudButton Variant="Variant.Outlined">@(card.FrontImages.IndexOf(card.FrontImage)+1)/@(card.FrontImages.Count)</MudButton>
+                                                </MudItem>
+                                            </MudGrid>
+                                        }
+                                        else
+                                        {
+                                            <MudGrid Justify="Justify.Center">
+                                                <MudItem xs="4" Class="mb-2 mt-2">
+                                                    <MudButton Variant="Variant.Outlined">0/0</MudButton>
+                                                </MudItem>
+                                            </MudGrid>
+                                        }
+                                    </MudCardContent>
+                                </MudCard>
+
+                            </MudPaper>
+                        </MudItem>
+                        
+                        //Style="background-image: url(@card.Images.Thumbnail);background-size: 240px 370px;background-position: center;}" 
+                    }
+                </MudGrid>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+}

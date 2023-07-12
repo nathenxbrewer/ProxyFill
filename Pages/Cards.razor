@@ -1,0 +1,68 @@
+﻿@page "/cards"
+@using ProxyFill.Shared.Dialog
+@using Newtonsoft.Json
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
+@inject IJSRuntime JSRuntime
+
+@code {
+
+    private async Task OnAddCardClicked()
+    {
+        var dialog = DialogService.Show<AddCardDialog>();
+        var result = await dialog.Result;
+        if (!result.Cancelled)
+        {
+            var card = result.Data as ProxyCard;
+            Data.ProxyCards.Add(card);
+            Snackbar.Add("Card added successfully", Severity.Success);
+            StateHasChanged();
+        }
+
+}
+
+    private async void OnExportCardsClicked()
+    {
+        var cardListJson = JsonConvert.SerializeObject(Data.ProxyCards, Formatting.Indented);
+        await JSRuntime.InvokeAsync<object>("FileSaveAs", $"Card Database - {DateTime.Today.ToLongDateString()}.json", cardListJson);
+        
+    }
+
+}
+
+<PageTitle>Cards</PageTitle>
+
+<MudTable Items="@Elements"  Hover="true" Bordered="true" Filter="new Func<ProxyCard,bool>(FilterFunc1)" @bind-SelectedItem="selectedItem">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Cards</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"/>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Preview</MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProxyCard, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProxyCard, object>(x=>x.SetCode)">Set Code</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProxyCard, object>(x=>x.Number)">Card Number</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProxyCard, object>(x=>x.CardId)">Card Id</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProxyCard, object>(x=>x.Image.Thumbnail)">Image (Thumbnail)</MudTableSortLabel></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd>                                             
+            <img
+                referrerPolicy="no-referrer"
+                src="@context.Image.Thumbnail"
+                Class="rounded-lg"
+                Height="175" Width="125"/>
+            </MudTd>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="Set Code">@context.SetCode</MudTd>
+        <MudTd DataLabel="Card Number">@context.Number</MudTd>
+        <MudTd DataLabel="Card Id">@context.CardId</MudTd>
+        <MudTd DataLabel="Image (Thumbnail)">@context.Image.Thumbnail</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager/>
+    </PagerContent>
+</MudTable>
+<MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Class="mb-4" OnClick="OnAddCardClicked">Add Card</MudButton>
+<MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Share" Class="mb-4" OnClick="OnExportCardsClicked">Export Cards</MudButton>

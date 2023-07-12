@@ -1,0 +1,56 @@
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.Add" Class="mr-3 mb-n1"/>Add Card
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudTextField @bind-Value="@card.Name" Label="Name"/>
+        <MudTextField @bind-Value="@card.SetCode" Label="Set Code"/>
+        <MudTextField @bind-Value="@card.Number" Label="Number"/>
+        <MudTextField @bind-Value="@imageName" Label="Image Name"/>
+        <MudTextField @bind-Value="@imageAuthor" Label="Image Author"/>
+        <MudTextField @bind-Value="@driveLink" Label="Drive Id"/>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Success" OnClick="AddCard">Submit</MudButton>
+    </DialogActions>
+</MudDialog>
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    public ProxyCard card { get; set; } = new();
+
+    private string imageName { get; set; }
+    private string imageAuthor { get; set; }
+    private string driveLink { get; set; }
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private void AddCard()
+    {
+
+        var driveId = Between(driveLink, @"https://drive.google.com/file/d/", "/view?usp=drive_link");
+        card.Image = new GoogleDriveImage(imageName, imageAuthor, driveId);
+
+        Snackbar.Add("Card Added", Severity.Success);
+        MudDialog.Close(DialogResult.Ok(card));
+    }
+    
+
+    
+    public string Between(string STR , string FirstString, string LastString)
+    {       
+        string FinalString;     
+        int Pos1 = STR.IndexOf(FirstString) + FirstString.Length;
+        int Pos2 = STR.IndexOf(LastString);
+        FinalString = STR.Substring(Pos1, Pos2 - Pos1);
+        return FinalString;
+    }
+}
