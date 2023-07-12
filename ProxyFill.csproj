@@ -22,6 +22,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <Content Remove="ProxyFill Companion\**" />
+      <Content Update="wwwroot\data\Cards.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
@@ -44,5 +47,6 @@
       <_ContentIncludedByDefault Remove="ProxyFill Companion\obj\ProxyFill Companion.csproj.nuget.dgspec.json" />
       <_ContentIncludedByDefault Remove="ProxyFill Companion\Properties\launchSettings.json" />
       <_ContentIncludedByDefault Remove="ProxyFill Companion\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\ProxyFill Companion.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
     </ItemGroup>
 </Project>
