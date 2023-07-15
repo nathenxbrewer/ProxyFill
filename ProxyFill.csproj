@@ -22,8 +22,8 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <Content Remove="ProxyFill Companion\**" />
-      <Content Update="wwwroot\data\Cards.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Content Update="wwwroot\data\cards.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
 

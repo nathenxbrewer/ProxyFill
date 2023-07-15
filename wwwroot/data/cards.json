@@ -1,0 +1,665 @@
+[
+  {
+    "Name": "Ralts",
+    "Number": "211",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Ralts SVI 211.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1bi3RjSGSPxubuVhi0cRMVeB9mtSr2O9V",
+      "Download": "https://drive.google.com/uc?export=download&id=1bi3RjSGSPxubuVhi0cRMVeB9mtSr2O9V"
+    },
+    "DateAdded": "2023-07-14T11:00:33.789-04:00"
+  },
+  {
+    "Name": "Professor's Research (Professor Sada)",
+    "Number": "240",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Professor's Research SVI 240.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1U4TtBAN4M-_Nu5R4E7jH3tj8CviOeelq",
+      "Download": "https://drive.google.com/uc?export=download&id=1U4TtBAN4M-_Nu5R4E7jH3tj8CviOeelq"
+    },
+    "DateAdded": "2023-07-14T11:00:34.098-04:00"
+  },
+  {
+    "Name": "Penny",
+    "Number": "252",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Penny SVI 252.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1w362hmUHaaz4OMB6fk1rviPc76bGJdvp",
+      "Download": "https://drive.google.com/uc?export=download&id=1w362hmUHaaz4OMB6fk1rviPc76bGJdvp"
+    },
+    "DateAdded": "2023-07-14T11:00:34.372-04:00"
+  },
+  {
+    "Name": "Miriam",
+    "Number": "238",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Miriam SVI 238.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1kuxSVFfgziG3KsGsfiR6ExTFl3jzn1wi",
+      "Download": "https://drive.google.com/uc?export=download&id=1kuxSVFfgziG3KsGsfiR6ExTFl3jzn1wi"
+    },
+    "DateAdded": "2023-07-14T11:00:34.669-04:00"
+  },
+  {
+    "Name": "Miraidon ex",
+    "Number": "244",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Miraidon EX SVI 244.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1UbXhY-01hhuVZDcyeOConJowBuG1KM7m",
+      "Download": "https://drive.google.com/uc?export=download&id=1UbXhY-01hhuVZDcyeOConJowBuG1KM7m"
+    },
+    "DateAdded": "2023-07-14T11:00:35.052-04:00"
+  },
+  {
+    "Name": "Koraidon ex",
+    "Number": "247",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Koraidon EX SVI 247.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1QViO-bkEU-9ib_9KxqPw3mLelyo4g4Nv",
+      "Download": "https://drive.google.com/uc?export=download&id=1QViO-bkEU-9ib_9KxqPw3mLelyo4g4Nv"
+    },
+    "DateAdded": "2023-07-14T11:00:35.429-04:00"
+  },
+  {
+    "Name": "Kirlia",
+    "Number": "212",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Kirlia SVI 212.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1khZ9jO2PYJrxXltrwO4AKT_u2l77icxQ",
+      "Download": "https://drive.google.com/uc?export=download&id=1khZ9jO2PYJrxXltrwO4AKT_u2l77icxQ"
+    },
+    "DateAdded": "2023-07-14T11:00:35.696-04:00"
+  },
+  {
+    "Name": "Gyarados ex",
+    "Number": "225",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Gyarados EX SVI 225.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1Uo0T_bC_I7_ixJKi_H9MGqjIbknj_4zt",
+      "Download": "https://drive.google.com/uc?export=download&id=1Uo0T_bC_I7_ixJKi_H9MGqjIbknj_4zt"
+    },
+    "DateAdded": "2023-07-14T11:00:35.935-04:00"
+  },
+  {
+    "Name": "Arven",
+    "Number": "249",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Arven SVI 249.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1EanYJS_Re04nx83ZHo-NF_fEmOi8THlc",
+      "Download": "https://drive.google.com/uc?export=download&id=1EanYJS_Re04nx83ZHo-NF_fEmOi8THlc"
+    },
+    "DateAdded": "2023-07-14T11:00:36.164-04:00"
+  },
+  {
+    "Name": "Arven",
+    "Number": "235",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Arven SVI 235.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1l54YLfZ_q9id1exZxKweEXjg9i_XgkMb",
+      "Download": "https://drive.google.com/uc?export=download&id=1l54YLfZ_q9id1exZxKweEXjg9i_XgkMb"
+    },
+    "DateAdded": "2023-07-14T11:00:36.36-04:00"
+  },
+  {
+    "Name": "Arcanine ex",
+    "Number": "224",
+    "SetCode": "SV1",
+    "CardId": null,
+    "Image": {
+      "Name": "Arcanine EX SVI 224.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1EcbvjZi3p-cYILioopV1HO_HEHwWlu0o",
+      "Download": "https://drive.google.com/uc?export=download&id=1EcbvjZi3p-cYILioopV1HO_HEHwWlu0o"
+    },
+    "DateAdded": "2023-07-14T11:00:36.582-04:00"
+  },
+  {
+    "Name": "Aether Paradise Conservation Area",
+    "Number": "116",
+    "SetCode": "GRI",
+    "CardId": null,
+    "Image": {
+      "Name": "Aether Paradise Conservation Area GRI 116.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/12HSXLKSr4nDzSvkC9OFTwKfOWmodCfEw",
+      "Download": "https://drive.google.com/uc?export=download&id=12HSXLKSr4nDzSvkC9OFTwKfOWmodCfEw"
+    },
+    "DateAdded": "2023-07-14T11:00:36.815-04:00"
+  },
+  {
+    "Name": "Field Blower",
+    "Number": "125",
+    "SetCode": "GRI",
+    "CardId": null,
+    "Image": {
+      "Name": "Field Blower GRI 125.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1CGvxwt9fFiHqRtEOB_K4VD6tl3vNUfrW",
+      "Download": "https://drive.google.com/uc?export=download&id=1CGvxwt9fFiHqRtEOB_K4VD6tl3vNUfrW"
+    },
+    "DateAdded": "2023-07-14T11:00:37.017-04:00"
+  },
+  {
+    "Name": "Nest Ball",
+    "Number": "123",
+    "SetCode": "SUM",
+    "CardId": null,
+    "Image": {
+      "Name": "Nest Ball SUM 123.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1BLqhI77_BJTHTz5tP8-PFKF6FaabpKlv",
+      "Download": "https://drive.google.com/uc?export=download&id=1BLqhI77_BJTHTz5tP8-PFKF6FaabpKlv"
+    },
+    "DateAdded": "2023-07-14T11:00:37.211-04:00"
+  },
+  {
+    "Name": "Evosoda",
+    "Number": "62",
+    "SetCode": "GEN",
+    "CardId": null,
+    "Image": {
+      "Name": "Evosoda GEN 62.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/115TI5bznqOUW9e6zZ2bMTCJpwaoBlQ9F",
+      "Download": "https://drive.google.com/uc?export=download&id=115TI5bznqOUW9e6zZ2bMTCJpwaoBlQ9F"
+    },
+    "DateAdded": "2023-07-14T11:00:37.418-04:00"
+  },
+  {
+    "Name": "Revitalizer",
+    "Number": "70",
+    "SetCode": "GEN",
+    "CardId": null,
+    "Image": {
+      "Name": "Revitalizer GEN 70.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1ksbgc-EbeavXZmD057-14swA0mC5c_GU",
+      "Download": "https://drive.google.com/uc?export=download&id=1ksbgc-EbeavXZmD057-14swA0mC5c_GU"
+    },
+    "DateAdded": "2023-07-14T11:00:37.621-04:00"
+  },
+  {
+    "Name": "Professor Juniper",
+    "Number": "116",
+    "SetCode": "PLF",
+    "CardId": null,
+    "Image": {
+      "Name": "Professor Juniper PLF 116.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1kVmLO35njs9XglThU10jtJOl722-9NTW",
+      "Download": "https://drive.google.com/uc?export=download&id=1kVmLO35njs9XglThU10jtJOl722-9NTW"
+    },
+    "DateAdded": "2023-07-14T11:00:37.826-04:00"
+  },
+  {
+    "Name": "Kricketot",
+    "Number": "5",
+    "SetCode": "BKP",
+    "CardId": null,
+    "Image": {
+      "Name": "Kricketot BKP 5.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/104nI5E0HLmC22drOhiUciW04HQQVHStA",
+      "Download": "https://drive.google.com/uc?export=download&id=104nI5E0HLmC22drOhiUciW04HQQVHStA"
+    },
+    "DateAdded": "2023-07-14T11:00:38.115-04:00"
+  },
+  {
+    "Name": "Sceptile",
+    "Number": "8",
+    "SetCode": "PRC",
+    "CardId": null,
+    "Image": {
+      "Name": "Sceptile PRC 8.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1KVDVR39zI9SVtbf8pXrqa7If_7y-K6hA",
+      "Download": "https://drive.google.com/uc?export=download&id=1KVDVR39zI9SVtbf8pXrqa7If_7y-K6hA"
+    },
+    "DateAdded": "2023-07-14T11:00:38.457-04:00"
+  },
+  {
+    "Name": "Grotle",
+    "Number": "7",
+    "SetCode": "BRS",
+    "CardId": null,
+    "Image": {
+      "Name": "Grotle BRS 7.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1h0Vn2M_XMjf04S7NVNu6an6UPCi7ha_E",
+      "Download": "https://drive.google.com/uc?export=download&id=1h0Vn2M_XMjf04S7NVNu6an6UPCi7ha_E"
+    },
+    "DateAdded": "2023-07-14T11:00:38.724-04:00"
+  },
+  {
+    "Name": "Thwackey",
+    "Number": "12",
+    "SetCode": "SSH",
+    "CardId": null,
+    "Image": {
+      "Name": "Thwackey SSH 12.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1k9sR9vQqda0Gfr5h66dtj0-piSPcvZe0",
+      "Download": "https://drive.google.com/uc?export=download&id=1k9sR9vQqda0Gfr5h66dtj0-piSPcvZe0"
+    },
+    "DateAdded": "2023-07-14T11:00:38.979-04:00"
+  },
+  {
+    "Name": "Ivysaur",
+    "Number": "2",
+    "SetCode": "DEX",
+    "CardId": null,
+    "Image": {
+      "Name": "Ivysaur PGO 2.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/17Y7rogxnlsDhyOWFSFanrN6ndem9yQ80",
+      "Download": "https://drive.google.com/uc?export=download&id=17Y7rogxnlsDhyOWFSFanrN6ndem9yQ80"
+    },
+    "DateAdded": "2023-07-14T11:00:39.272-04:00"
+  },
+  {
+    "Name": "Venusaur",
+    "Number": "3",
+    "SetCode": "DEX",
+    "CardId": null,
+    "Image": {
+      "Name": "Venusaur PGO 3.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1XT8vKZx7Bj--cJUf_SSAftinCtDiNFQN",
+      "Download": "https://drive.google.com/uc?export=download&id=1XT8vKZx7Bj--cJUf_SSAftinCtDiNFQN"
+    },
+    "DateAdded": "2023-07-14T11:00:39.541-04:00"
+  },
+  {
+    "Name": "Bulbasaur",
+    "Number": "1",
+    "SetCode": "DET",
+    "CardId": null,
+    "Image": {
+      "Name": "Bulbasaur DET 1.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1MSbBxj8NEkpnG0skCuxWOkcjNKSB3k6S",
+      "Download": "https://drive.google.com/uc?export=download&id=1MSbBxj8NEkpnG0skCuxWOkcjNKSB3k6S"
+    },
+    "DateAdded": "2023-07-14T11:00:39.971-04:00"
+  },
+  {
+    "Name": "Avery",
+    "Number": "187",
+    "SetCode": "CRE",
+    "CardId": null,
+    "Image": {
+      "Name": "Avery CRE 187.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/12CD8FXVIP385Io8-yN9rRrykKm9ow-Nr",
+      "Download": "https://drive.google.com/uc?export=download&id=12CD8FXVIP385Io8-yN9rRrykKm9ow-Nr"
+    },
+    "DateAdded": "2023-07-14T11:00:40.169-04:00"
+  },
+  {
+    "Name": "Bird Keeper",
+    "Number": "66",
+    "SetCode": "SHF",
+    "CardId": null,
+    "Image": {
+      "Name": "Bird Keeper SHF 66.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1IlgSTc7-8ddsZtMqRVovCNMTdSxNafAM",
+      "Download": "https://drive.google.com/uc?export=download&id=1IlgSTc7-8ddsZtMqRVovCNMTdSxNafAM"
+    },
+    "DateAdded": "2023-07-14T11:00:40.355-04:00"
+  },
+  {
+    "Name": "Ball Guy",
+    "Number": "65",
+    "SetCode": "SHF",
+    "CardId": null,
+    "Image": {
+      "Name": "Ball Guy SHF 65.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1c1HxdVgFhqwBD4MHJT9pV8QcPsmgXebN",
+      "Download": "https://drive.google.com/uc?export=download&id=1c1HxdVgFhqwBD4MHJT9pV8QcPsmgXebN"
+    },
+    "DateAdded": "2023-07-14T11:00:40.574-04:00"
+  },
+  {
+    "Name": "Grookey",
+    "Number": "11",
+    "SetCode": "SSH",
+    "CardId": null,
+    "Image": {
+      "Name": "Grookey SHF 11.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1VdSjUjRRVyfEES5SPLbxeN8xJxWw2J4i",
+      "Download": "https://drive.google.com/uc?export=download&id=1VdSjUjRRVyfEES5SPLbxeN8xJxWw2J4i"
+    },
+    "DateAdded": "2023-07-14T11:00:40.816-04:00"
+  },
+  {
+    "Name": "Rillaboom",
+    "Number": "13",
+    "SetCode": "SHF",
+    "CardId": null,
+    "Image": {
+      "Name": "Rillaboom SHF 13.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1-d5dCscSYBdTKffvp5IWfJEVleRDRNIB",
+      "Download": "https://drive.google.com/uc?export=download&id=1-d5dCscSYBdTKffvp5IWfJEVleRDRNIB"
+    },
+    "DateAdded": "2023-07-14T11:00:41.019-04:00"
+  },
+  {
+    "Name": "Net Ball",
+    "Number": "234",
+    "SetCode": "LOT",
+    "CardId": null,
+    "Image": {
+      "Name": "Net Ball LOT 234.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1a8CWVmhdjp4g0Rb8mJYw25bKRP1Vn4OS",
+      "Download": "https://drive.google.com/uc?export=download&id=1a8CWVmhdjp4g0Rb8mJYw25bKRP1Vn4OS"
+    },
+    "DateAdded": "2023-07-14T11:00:41.219-04:00"
+  },
+  {
+    "Name": "Grovyle",
+    "Number": "21",
+    "SetCode": "LOT",
+    "CardId": null,
+    "Image": {
+      "Name": "Grovyle LOT 21.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1Yenc3TvgE3mQX1kpLz01kAs3ErtF-a3M",
+      "Download": "https://drive.google.com/uc?export=download&id=1Yenc3TvgE3mQX1kpLz01kAs3ErtF-a3M"
+    },
+    "DateAdded": "2023-07-14T11:00:41.421-04:00"
+  },
+  {
+    "Name": "Wartortle",
+    "Number": "42",
+    "SetCode": "BS",
+    "CardId": null,
+    "Image": {
+      "Name": "Wartortle UL 42.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1H_hE6C0i6sRJGY4QTpmuId7oc3bbcABJ",
+      "Download": "https://drive.google.com/uc?export=download&id=1H_hE6C0i6sRJGY4QTpmuId7oc3bbcABJ"
+    },
+    "DateAdded": "2023-07-14T11:00:41.68-04:00"
+  },
+  {
+    "Name": "Gyarados",
+    "Number": "24",
+    "SetCode": "DRX",
+    "CardId": null,
+    "Image": {
+      "Name": "Gyarados DRX 24.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1vt7C7z0iAR4I_KvUXKc_39rSlcli-QUD",
+      "Download": "https://drive.google.com/uc?export=download&id=1vt7C7z0iAR4I_KvUXKc_39rSlcli-QUD"
+    },
+    "DateAdded": "2023-07-14T11:00:41.921-04:00"
+  },
+  {
+    "Name": "Zarude",
+    "Number": "16",
+    "SetCode": "SHF",
+    "CardId": null,
+    "Image": {
+      "Name": "Zarude CRZ 16.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1IWtnRqXnmHEHt2Z-06Xsp16fvUMFZXM5",
+      "Download": "https://drive.google.com/uc?export=download&id=1IWtnRqXnmHEHt2Z-06Xsp16fvUMFZXM5"
+    },
+    "DateAdded": "2023-07-14T11:00:42.214-04:00"
+  },
+  {
+    "Name": "Bellossom",
+    "Number": "3",
+    "SetCode": "UF",
+    "CardId": null,
+    "Image": {
+      "Name": "Bellossom CRZ 3.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1P_JebiD07Fghomc0xO9A6pl8rNKkHel7",
+      "Download": "https://drive.google.com/uc?export=download&id=1P_JebiD07Fghomc0xO9A6pl8rNKkHel7"
+    },
+    "DateAdded": "2023-07-14T11:00:42.477-04:00"
+  },
+  {
+    "Name": "Ivysaur",
+    "Number": "2",
+    "SetCode": "DEX",
+    "CardId": null,
+    "Image": {
+      "Name": "Ivysaur DEX 2.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1inOOGNK9LdtMMsrGbqktlweIzpPywgyG",
+      "Download": "https://drive.google.com/uc?export=download&id=1inOOGNK9LdtMMsrGbqktlweIzpPywgyG"
+    },
+    "DateAdded": "2023-07-14T11:00:42.478-04:00"
+  },
+  {
+    "Name": "Gardenia's Vigor",
+    "Number": "184",
+    "SetCode": "ASR",
+    "CardId": null,
+    "Image": {
+      "Name": "Gardenia's Vigor ASR 184.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1GmVfmxhtfcQI0kEtQvE1IfnM4Vvy66xe",
+      "Download": "https://drive.google.com/uc?export=download&id=1GmVfmxhtfcQI0kEtQvE1IfnM4Vvy66xe"
+    },
+    "DateAdded": "2023-07-14T11:00:42.68-04:00"
+  },
+  {
+    "Name": "Turtwig",
+    "Number": "6",
+    "SetCode": "UPR",
+    "CardId": null,
+    "Image": {
+      "Name": "Turtwig UPR 6.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1A7Gdv0PYzytZnA7IYksFNCq93NNLii0-",
+      "Download": "https://drive.google.com/uc?export=download&id=1A7Gdv0PYzytZnA7IYksFNCq93NNLii0-"
+    },
+    "DateAdded": "2023-07-14T11:00:42.934-04:00"
+  },
+  {
+    "Name": "Torterra",
+    "Number": "9",
+    "SetCode": "UPR",
+    "CardId": null,
+    "Image": {
+      "Name": "Torterra UPR 9.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1PeQsUCHn_wlsIxNPdGi8aAZ4euMofu0D",
+      "Download": "https://drive.google.com/uc?export=download&id=1PeQsUCHn_wlsIxNPdGi8aAZ4euMofu0D"
+    },
+    "DateAdded": "2023-07-14T11:00:43.129-04:00"
+  },
+  {
+    "Name": "Gardenia",
+    "Number": "149",
+    "SetCode": "UPR",
+    "CardId": null,
+    "Image": {
+      "Name": "Gardenia UPR 149.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1hWTno32-L1JMHQ41oDsVa6lefQcS9s9-",
+      "Download": "https://drive.google.com/uc?export=download&id=1hWTno32-L1JMHQ41oDsVa6lefQcS9s9-"
+    },
+    "DateAdded": "2023-07-14T11:00:43.33-04:00"
+  },
+  {
+    "Name": "Guzma",
+    "Number": "143",
+    "SetCode": "BUS",
+    "CardId": null,
+    "Image": {
+      "Name": "Guzma BUS 143.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/17gUnN8s0ji4WdhreDgyeJej8bZe1PBk6",
+      "Download": "https://drive.google.com/uc?export=download&id=17gUnN8s0ji4WdhreDgyeJej8bZe1PBk6"
+    },
+    "DateAdded": "2023-07-14T11:00:43.617-04:00"
+  },
+  {
+    "Name": "Acerola",
+    "Number": "142",
+    "SetCode": "BUS",
+    "CardId": null,
+    "Image": {
+      "Name": "Acerola BUS 142.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1B5mK2bxbn0boQewXFNxT5TgYnGLE0dhg",
+      "Download": "https://drive.google.com/uc?export=download&id=1B5mK2bxbn0boQewXFNxT5TgYnGLE0dhg"
+    },
+    "DateAdded": "2023-07-14T11:00:43.803-04:00"
+  },
+  {
+    "Name": "Nessa",
+    "Number": "183",
+    "SetCode": "VIV",
+    "CardId": null,
+    "Image": {
+      "Name": "Nessa VIV 183.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1oSNjQ_8Btv9qEgpDNXAiGV6swHrbxmfl",
+      "Download": "https://drive.google.com/uc?export=download&id=1oSNjQ_8Btv9qEgpDNXAiGV6swHrbxmfl"
+    },
+    "DateAdded": "2023-07-14T11:00:44.01-04:00"
+  },
+  {
+    "Name": "Capacious Bucket",
+    "Number": "156",
+    "SetCode": "RCL",
+    "CardId": null,
+    "Image": {
+      "Name": "Capacious Bucket RCL 156.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1aE_bJOC5GzmnjIRjQDH8f_1wAUZ2jcd7",
+      "Download": "https://drive.google.com/uc?export=download&id=1aE_bJOC5GzmnjIRjQDH8f_1wAUZ2jcd7"
+    },
+    "DateAdded": "2023-07-14T11:00:44.204-04:00"
+  },
+  {
+    "Name": "Boss's Orders",
+    "Number": "189",
+    "SetCode": "RCL",
+    "CardId": null,
+    "Image": {
+      "Name": "Boss's Orders RCL 189.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/14dyodjDeV6XUKRo9tJilfdP3qVLcb-RE",
+      "Download": "https://drive.google.com/uc?export=download&id=14dyodjDeV6XUKRo9tJilfdP3qVLcb-RE"
+    },
+    "DateAdded": "2023-07-14T11:00:44.404-04:00"
+  },
+  {
+    "Name": "Gyarados ex",
+    "Number": "109",
+    "SetCode": "RG",
+    "CardId": null,
+    "Image": {
+      "Name": "Gyarados XYP 109.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1ZFTTRKEYEGehHTaOxHJt0MGY3NYfvDX0",
+      "Download": "https://drive.google.com/uc?export=download&id=1ZFTTRKEYEGehHTaOxHJt0MGY3NYfvDX0"
+    },
+    "DateAdded": "2023-07-14T11:00:44.615-04:00"
+  },
+  {
+    "Name": "Quaquaval ex",
+    "Number": "260",
+    "SetCode": "SV2",
+    "CardId": null,
+    "Image": {
+      "Name": "Quaquaval EX 260.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1T-8kV-K1EmaBq3bIItEyiVLBmfre73Up",
+      "Download": "https://drive.google.com/uc?export=download&id=1T-8kV-K1EmaBq3bIItEyiVLBmfre73Up"
+    },
+    "DateAdded": "2023-07-14T11:00:44.815-04:00"
+  },
+  {
+    "Name": "Tyranitar",
+    "Number": "222",
+    "SetCode": "SV2",
+    "CardId": null,
+    "Image": {
+      "Name": "Tyranitar PAL 222.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1f5oxJpwwX1hqIMlsgI_C5LTywc6Ff-Ci",
+      "Download": "https://drive.google.com/uc?export=download&id=1f5oxJpwwX1hqIMlsgI_C5LTywc6Ff-Ci"
+    },
+    "DateAdded": "2023-07-14T11:00:45.021-04:00"
+  },
+  {
+    "Name": "Iono",
+    "Number": "254",
+    "SetCode": "SV2",
+    "CardId": null,
+    "Image": {
+      "Name": "Iono PAL 254.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1tSkyH_JAwSZgl9onzyotWBDm4WWHSAF4",
+      "Download": "https://drive.google.com/uc?export=download&id=1tSkyH_JAwSZgl9onzyotWBDm4WWHSAF4"
+    },
+    "DateAdded": "2023-07-14T11:00:45.216-04:00"
+  },
+  {
+    "Name": "Iris",
+    "Number": "101",
+    "SetCode": "PLB",
+    "CardId": null,
+    "Image": {
+      "Name": "Iris PLB 101.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1T6thX6Xzui7rbNoZOUKAIO6iLY5BXuii",
+      "Download": "https://drive.google.com/uc?export=download&id=1T6thX6Xzui7rbNoZOUKAIO6iLY5BXuii"
+    },
+    "DateAdded": "2023-07-14T11:00:45.411-04:00"
+  },
+  {
+    "Name": "Blastoise",
+    "Number": "16",
+    "SetCode": "PLB",
+    "CardId": null,
+    "Image": {
+      "Name": "Blastoise PLB 16.png",
+      "Author": "DaddyOogway",
+      "Thumbnail": "https://lh3.googleusercontent.com/d/1DIiO3C89tn2Be7nPmncK3CMgq8oA7z3L",
+      "Download": "https://drive.google.com/uc?export=download&id=1DIiO3C89tn2Be7nPmncK3CMgq8oA7z3L"
+    },
+    "DateAdded": "2023-07-14T11:00:45.617-04:00"
+  }
+]

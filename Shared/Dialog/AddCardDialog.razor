@@ -39,7 +39,6 @@
         var driveId = Between(driveLink, @"https://drive.google.com/file/d/", "/view?usp=drive_link");
         card.Image = new GoogleDriveImage(imageName, imageAuthor, driveId);
 
-        Snackbar.Add("Card Added", Severity.Success);
         MudDialog.Close(DialogResult.Ok(card));
     }
     

@@ -1,0 +1,27 @@
+@using MudBlazor
+@using MudBlazor
+<MudDialog>
+    <DialogContent>
+        <MudTextField @bind-Value="Author" Label="Author" Variant="Variant.Outlined"/>
+        <MudTextField @bind-Value="FolderId" Label="Folder" Variant="Variant.Outlined"/>
+        </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">Ok</MudButton>
+    </DialogActions>
+</MudDialog>
+@code {
+
+    public string Author { get; set; }
+    public string FolderId { get; set; }
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(
+    new[]
+    {
+        Author,
+        FolderId
+    }));
+
+    void Cancel() => MudDialog.Cancel();
+}
