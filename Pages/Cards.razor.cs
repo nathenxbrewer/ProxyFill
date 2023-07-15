@@ -8,7 +8,6 @@ using PokemonTcgSdk.Standard.Infrastructure.HttpClients.Base;
 using PokemonTcgSdk.Standard.Infrastructure.HttpClients.Cards;
 using ProxyFill.Model;
 using ProxyFill.Shared.Dialog;
-using File = Google.Apis.Drive.v2.Data.File;
 
 namespace ProxyFill.Pages;
 
