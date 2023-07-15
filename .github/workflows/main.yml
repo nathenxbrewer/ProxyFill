@@ -1,35 +1,46 @@
-name: Deploy Blazor WASM to GitHub Pages
-
-on:
-    push:
-        branches: [main]
+name: 'Publish application'
+on: push
 
 jobs:
-    deploy-to-github-pages:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
+  build:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    
+    env:
+     PUBLISH_FOLDER: ProxyFill/bin/Release/net7.0/publish/wwwroot
 
-            - name: Setup .NET Core SDK
-              uses: actions/setup-dotnet@v1
-              with:
-                  dotnet-version: 6.x
-                  include-prerelease: true
+    name: Build and Deploy Job
+    steps:
+      - name: Set the name of the repo in env variable 
+        run: 
+            echo "REPO_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
+        
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.x'
+   
+      - name: Dotnet Publish
+        run: 
+            dotnet publish  --configuration Release
 
-            - name: Publish .NET Core Project
-              run: dotnet publish ProxyFill.csproj -c Release -o release --nologo
-
-            - name: copy index.html to 404.html
-              run: cp release/wwwroot/index.html release/wwwroot/404.html
-
-            - name: Add .nojekyll file
-              run: touch release/wwwroot/.nojekyll
-
-            - name: Commit wwwroot to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  BRANCH: gh-pages
-                  FOLDER: release/wwwroot
-                  
-# Based on https://swimburger.net/blog/dotnet/how-to-deploy-aspnet-blazor-webassembly-to-github-pages
+      - name: Change base-tag in index.html to repo name
+        run: sed -i 's/<base href="\/" \/>/<base href="\/${{ env.REPO_NAME }}\/" \/>/g' $GITHUB_WORKSPACE/$PUBLISH_FOLDER/index.html
+  
+      - name: copy index.html to 404.html
+        run: cp $GITHUB_WORKSPACE/$PUBLISH_FOLDER/index.html $GITHUB_WORKSPACE/$PUBLISH_FOLDER/404.html
+      
+      - name: Add .nojekyll file
+        run: touch $PUBLISH_FOLDER/.nojekyll
+        
+      - name: Deploy GitHub Pages action
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+            github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+            publish_branch: gh-pages
+            publish_dir: /${{ env.PUBLISH_FOLDER }}
+            allow_empty_commit: false
+            keep_files: false
+            force_orphan: true
