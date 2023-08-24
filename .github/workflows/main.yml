@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-     PUBLISH_FOLDER: ProxyFill/bin/Release/net7.0/publish/wwwroot
+     PUBLISH_FOLDER: bin/Release/net6.0/publish/wwwroot
 
     name: Build and Deploy Job
     steps:
@@ -19,7 +19,7 @@ jobs:
       
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '7.0.x'
+          dotnet-version: '6.0.x'
    
       - name: Dotnet Publish
         run: 
@@ -35,7 +35,7 @@ jobs:
         run: touch $PUBLISH_FOLDER/.nojekyll
         
       - name: Deploy GitHub Pages action
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3.6.1
         with:
             github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
