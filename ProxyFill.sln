@@ -5,6 +5,16 @@ VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyFill", "ProxyFill.csproj", "{D6479186-3411-41D7-8F25-8151DB2AE12C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyFill Companion", "..\GitHub\ProxyFill-Companion\ProxyFill Companion\ProxyFillCompanion.csproj", "{BE319975-8264-4F50-B555-7B988EE95593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyFill.Shared", "ProxyFill.Shared\ProxyFill.Shared.csproj", "{9486DCC0-710C-4E27-8E25-D6ADFBC69783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Companion.Console", "Companion.Console\Companion.Console.csproj", "{45719BB7-8B0A-4301-AF3B-E002157954E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemon Image Renamer", "Pokemon Image Renamer\Pokemon Image Renamer.csproj", "{B222BF67-9428-4CB7-A76B-C677A007C8B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Image Sorter", "Image Sorter\Image Sorter.csproj", "{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{D6479186-3411-41D7-8F25-8151DB2AE12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6479186-3411-41D7-8F25-8151DB2AE12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6479186-3411-41D7-8F25-8151DB2AE12C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE319975-8264-4F50-B555-7B988EE95593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE319975-8264-4F50-B555-7B988EE95593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE319975-8264-4F50-B555-7B988EE95593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE319975-8264-4F50-B555-7B988EE95593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9486DCC0-710C-4E27-8E25-D6ADFBC69783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9486DCC0-710C-4E27-8E25-D6ADFBC69783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9486DCC0-710C-4E27-8E25-D6ADFBC69783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9486DCC0-710C-4E27-8E25-D6ADFBC69783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45719BB7-8B0A-4301-AF3B-E002157954E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45719BB7-8B0A-4301-AF3B-E002157954E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45719BB7-8B0A-4301-AF3B-E002157954E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45719BB7-8B0A-4301-AF3B-E002157954E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B222BF67-9428-4CB7-A76B-C677A007C8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B222BF67-9428-4CB7-A76B-C677A007C8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B222BF67-9428-4CB7-A76B-C677A007C8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B222BF67-9428-4CB7-A76B-C677A007C8B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

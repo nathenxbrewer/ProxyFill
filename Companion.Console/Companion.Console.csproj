@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Apis.Drive.v2" Version="1.61.0.3120" />
+      <PackageReference Include="Selenium.Support" Version="4.10.0" />
+      <PackageReference Include="Selenium.WebDriver" Version="4.10.0" />
+      <PackageReference Include="Selenium.WebDriver.MSEdgeDriver" Version="114.0.1823.58" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ProxyFill.csproj" />
+    </ItemGroup>
+
+</Project>

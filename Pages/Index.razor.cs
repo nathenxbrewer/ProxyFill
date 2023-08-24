@@ -1,7 +1,6 @@
 using System.Net.Http.Json;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
-using System.Text.Json.Serialization;
+using AutoMapper;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using MudBlazor;
@@ -9,12 +8,13 @@ using Newtonsoft.Json;
 using PokemonTcgSdk.Standard.Infrastructure.HttpClients;
 using PokemonTcgSdk.Standard.Infrastructure.HttpClients.Base;
 using PokemonTcgSdk.Standard.Infrastructure.HttpClients.Cards;
+using ProxyFill.Domain;
+using ProxyFill.Domain.Services;
 using ProxyFill.Model;
 using ProxyFill.Shared.Dialog;
-using ProxyFill.ViewModel;
+using ProxyFill.Shared.ViewModel;
 using Syncfusion.Drawing;
-using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
+using Image = ProxyFill.Model.Image;
 
 
 namespace ProxyFill.Pages;
@@ -23,7 +23,8 @@ public partial class Index
 {
     PokemonApiClient pokeClient = new PokemonApiClient("ca751a14-2892-4c5e-9460-9fe418557062");
     [Inject] public HttpClient HttpClient { get; set; }
-    public string CardList { get; set; } = "1 Ball Guy SHF 65";
+    [Inject] public IMapper Mapper { get; set; }
+    public string CardList { get; set; }
     public bool ListSubmitted { get; set; }
     private bool OverlayVisible { get; set; }
     public string ListName { get; set; } = "Untitled List";
@@ -83,7 +84,8 @@ public partial class Index
 
     private async void OnExportListClick()
     {
-        var cardListJson = JsonConvert.SerializeObject(Cards, Formatting.Indented);
+        var convertedList = Mapper.Map<List<ProxyCardViewModel>, List<ProxyCardDTO>>(Cards);
+        var cardListJson = JsonConvert.SerializeObject(convertedList, Formatting.Indented);
         await JSRuntime.InvokeAsync<object>("FileSaveAs", $"{ListName}.json", cardListJson);
 
         // using (PdfDocument pdfDocument = new PdfDocument())
@@ -120,7 +122,7 @@ public partial class Index
             var quantity = lineParts.First();
             lineParts.Remove(lineParts.First());
             var lineWithoutQuantity = string.Join(" ", lineParts);
-            var ptcgoCard = Methods.ParsePTCGO(lineWithoutQuantity);
+            var ptcgoCard = Helpers.ParsePTCGO(lineWithoutQuantity);
             if (ptcgoCard == null)
             {
                 invalidCards.Add(line);
@@ -130,20 +132,30 @@ public partial class Index
             var name = ptcgoCard.Name;
             var setCode = ptcgoCard.SetCode;
             var cardNumber = ptcgoCard.CardNumber;
-            var cards = await GetPokemonCards(name, setCode, cardNumber);
-            if (!cards.Results.Any())
-            {
+            var card = await PokemonAPIService.GetPokemonCard(name, setCode, cardNumber);
+            if(card == null)
+            {                
                 invalidCards.Add(line);
                 continue;
             }
 
-            var matchingCard = cards.Results.First();
+            var matchingCard = card;
 
             //must match all 3. 
             var proxyImageRecords = ProxyCards.Where(x =>
-                x.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase)
-                && x.SetCode == setCode
-                && x.Number == cardNumber).ToList();
+                x.Name.Contains(name, StringComparison.InvariantCultureIgnoreCase)
+                && x.SetCode == card.Set.PtcgoCode
+                && x.Number == cardNumber)
+                .ToList();
+            if (!proxyImageRecords.Any())
+            {
+                //try with setID
+                proxyImageRecords = ProxyCards.Where(x =>
+                    x.Name.Contains(name, StringComparison.InvariantCultureIgnoreCase)
+                    && x.SetCode.Equals(card.Set.Id, StringComparison.InvariantCultureIgnoreCase)
+                    && x.Number == cardNumber).ToList();
+            }
+            
 
             //instantiate with the given info, in case there is no match. Populates a 'card missing' image.
             var proxyCard = new ProxyCardViewModel()
@@ -165,6 +177,7 @@ public partial class Index
                 proxyCard.Number = matchingCard.Number;
                 proxyCard.CardId = matchingCard.Id;
                 proxyCard.BackImage = DefaultCardBack;
+                proxyCard.SetCode = matchingCard.Set.PtcgoCode ?? matchingCard.Set.Id.ToUpper();
             }
 
 
@@ -192,16 +205,5 @@ public partial class Index
     }
 
 
-    private async Task<ApiResourceList<PokemonCard>> GetPokemonCards(string name, string setCode, string cardNumber)
-    {
-        var filter = new Dictionary<string, string>
-        {
-            { "name", name },
-            { "set.ptcgoCode", setCode },
-            { "number", cardNumber },
-        };
 
-        var cards = await pokeClient.GetApiResourceAsync<PokemonCard>(filter);
-        return cards;
-    }
 }

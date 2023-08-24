@@ -4,6 +4,7 @@ public class DriveSearchFileResponse
 {
     public string kind { get; set; }
     public bool incompleteSearch { get; set; }
+    public string nextPageToken { get; set; }
     public File[] files { get; set; }
 }
 

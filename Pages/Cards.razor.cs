@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using PokemonTcgSdk.Standard.Infrastructure.HttpClients;
 using PokemonTcgSdk.Standard.Infrastructure.HttpClients.Base;
 using PokemonTcgSdk.Standard.Infrastructure.HttpClients.Cards;
+using ProxyFill.Domain;
 using ProxyFill.Model;
 using ProxyFill.Shared.Dialog;
 
@@ -17,7 +18,6 @@ public partial class Cards
 
     private ProxyCard selectedItem;
     private string searchString { get; set; }
-    PokemonApiClient pokeClient = new PokemonApiClient("ca751a14-2892-4c5e-9460-9fe418557062");
 
     protected override async Task OnInitializedAsync()
     {
@@ -71,10 +71,19 @@ public partial class Cards
         var folderId = data[1];
         using (var httpclient = new HttpClient())
         {
+            var nextPageToken = "";
             var apiKey = "AIzaSyBOGAtxTDZMJas_EkIRb0pVBpyQYpTaHXU";
             var query = '"' + folderId + '"' + " in parents";
             var url = $"https://www.googleapis.com/drive/v3/files?q={query}&key={apiKey}";
             var list = await httpclient.GetFromJsonAsync<DriveSearchFileResponse>(url);
+            nextPageToken = list.nextPageToken;
+            while(!string.IsNullOrEmpty(nextPageToken))
+            {
+                url = $"https://www.googleapis.com/drive/v3/files?q={query}&key={apiKey}&pageToken={list.nextPageToken}";
+                var newList = await httpclient.GetFromJsonAsync<DriveSearchFileResponse>(url);
+                list.files = list.files.Concat(newList.files).ToArray();
+                nextPageToken = newList.nextPageToken;
+            }
             
             var filesList = new List<ProxyFill.Model.File>();
             foreach (var record in list.files)
@@ -89,6 +98,14 @@ public partial class Cards
                     query = '"' + folderId + '"' + " in parents";
                     url = $"https://www.googleapis.com/drive/v3/files?q={query}&key={apiKey}";
                     var newlist = await httpclient.GetFromJsonAsync<DriveSearchFileResponse>(url);
+                    nextPageToken = newlist.nextPageToken;
+                    while(!string.IsNullOrEmpty(nextPageToken))
+                    {
+                        url = $"https://www.googleapis.com/drive/v3/files?q={query}&key={apiKey}&pageToken={newlist.nextPageToken}";
+                        var newList = await httpclient.GetFromJsonAsync<DriveSearchFileResponse>(url);
+                        newlist.files = newlist.files.Concat(newList.files).ToArray();
+                        nextPageToken = newList.nextPageToken;
+                    }
                     foreach (var newRecord in newlist.files)
                     {
                         if (newRecord.mimeType == "image/png")
@@ -101,7 +118,7 @@ public partial class Cards
             
             foreach (var file in filesList)
             {
-                var ptcgoCard = Methods.ParsePTCGO(Path.GetFileNameWithoutExtension(file.name));
+                var ptcgoCard = Helpers.ParsePTCGO(Path.GetFileNameWithoutExtension(file.name));
 
                 if (ptcgoCard == null) 
                     continue;
@@ -110,39 +127,20 @@ public partial class Cards
                 var downloadURL = new GoogleDriveImage(file.id);
                 if(ProxyCards.Select(x=>x.Image).Any(x=>x.Download == downloadURL.Download)) continue;
                 
-                var matchingCards = await GetPokemonCards(ptcgoCard.Name, ptcgoCard.CardNumber);
-                if (matchingCards.Results.Any())
-                {
-                    var card = matchingCards.Results.First();
-                    ProxyCards.Add(new()
-                    {
-                        Name = card.Name, SetCode = card.Set.PtcgoCode ?? card.Set.Id.ToUpper(), Number = card.Number, 
-                        Image = new GoogleDriveImage(file.name,author, file.id)
-                    });
-                    cardsAdded++;
-                    //Snackbar.Add($"Added Card: {card.Name} {card.Set.PtcgoCode} {card.Number}", Severity.Success);
-                }
-                else
-                {
-                    
-                }
+                var matchingCard = await PokemonAPIService.GetPokemonCard(ptcgoCard.Name, ptcgoCard.SetCode, ptcgoCard.CardNumber);
+                if (matchingCard == null)
+                    continue;
                 
+                ProxyCards.Add(new()
+                {
+                    Name = matchingCard.Name, SetCode = matchingCard.Set.PtcgoCode ?? matchingCard.Set.Id.ToUpper(), Number = matchingCard.Number, 
+                    Image = new GoogleDriveImage(file.name,author, file.id)
+                });
+                Console.WriteLine($"Added Card: {file.name}");
+                cardsAdded++;
             }
             Snackbar.Add($"Done adding Drive folder, {cardsAdded}/{filesList.Count} added.", Severity.Success);
         }
-    }
-    private async Task<ApiResourceList<PokemonCard>> GetPokemonCards(string name, string cardNumber)
-    {
-        //removing PTCGO set filter because api doesnt have PTCGO for every set, PTCGO got shut down. 
-        var filter = new Dictionary<string, string>
-        {
-            { "name", name },
-            // { "set.ptcgoCode", setCode },
-            { "number", cardNumber },
-        };
-
-        var cards = await pokeClient.GetApiResourceAsync<PokemonCard>(filter);
-        return cards;
     }
     
 }

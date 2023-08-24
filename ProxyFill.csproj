@@ -2,15 +2,19 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.7"/>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.7" PrivateAssets="all"/>
         <PackageReference Include="MudBlazor" Version="6.0.13"/>
         <PackageReference Include="PokemonTcgSdk" Version="2.4.1" />
+        <PackageReference Include="Selenium.WebDriver" Version="4.10.0" />
         <PackageReference Include="Syncfusion.Pdf.Net.Core" Version="22.1.37" />
     </ItemGroup>
 
@@ -22,21 +26,48 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <Content Remove="ProxyFill Companion\**" />
+      <Content Remove="release\**" />
+      <Content Remove="Companion.Console\**" />
+      <Content Remove="Companion.MacOS\**" />
+      <Content Remove="ProxyFill.Shared\**" />
+      <Content Update="wwwroot\data\cards_old.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Remove="Pokemon Image Renamer\**" />
       <Content Update="wwwroot\data\cards.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <Content Remove="Image Sorter\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Remove="ProxyFill Companion\**" />
+      <Compile Remove="release\**" />
+      <Compile Remove="Companion.Console\**" />
+      <Compile Remove="Companion.MacOS\**" />
+      <Compile Remove="ProxyFill.Shared\**" />
+      <Compile Remove="Pokemon Image Renamer\**" />
+      <Compile Remove="Image Sorter\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="ProxyFill Companion\**" />
+      <EmbeddedResource Remove="release\**" />
+      <EmbeddedResource Remove="Companion.Console\**" />
+      <EmbeddedResource Remove="Companion.MacOS\**" />
+      <EmbeddedResource Remove="ProxyFill.Shared\**" />
+      <EmbeddedResource Remove="Pokemon Image Renamer\**" />
+      <EmbeddedResource Remove="Image Sorter\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="ProxyFill Companion\**" />
+      <None Remove="release\**" />
+      <None Remove="Companion.Console\**" />
+      <None Remove="Companion.MacOS\**" />
+      <None Remove="ProxyFill.Shared\**" />
+      <None Remove="Pokemon Image Renamer\**" />
+      <None Remove="Image Sorter\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -48,5 +79,43 @@
       <_ContentIncludedByDefault Remove="ProxyFill Companion\Properties\launchSettings.json" />
       <_ContentIncludedByDefault Remove="ProxyFill Companion\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\ProxyFill Companion.runtimeconfig.json" />
       <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
+      <_ContentIncludedByDefault Remove="release\web.config" />
+      <_ContentIncludedByDefault Remove="release\wwwroot\data\cards.json" />
+      <_ContentIncludedByDefault Remove="release\wwwroot\_framework\blazor.boot.json" />
+      <_ContentIncludedByDefault Remove="Companion.Console\bin\Debug\net6.0\Companion.Console.deps.json" />
+      <_ContentIncludedByDefault Remove="Companion.Console\bin\Debug\net6.0\Companion.Console.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="Companion.Console\obj\Companion.Console.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Companion.Console\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Companion.Console\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\bin\Debug\net6.0-maccatalyst\maccatalyst-x64\Companion.MacOS.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\bin\Debug\net7.0-android\Companion.MacOS.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\bin\Debug\net7.0-ios\iossimulator-x64\Companion.MacOS.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\Companion.MacOS.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\obj\Companion.MacOS.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\actool\cloned-assets\Assets.xcassets\appicon.appiconset\Contents.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Companion.MacOS\Properties\launchSettings.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill.Shared\bin\Debug\net7.0\ProxyFill.Domain.deps.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill.Shared\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill.Shared\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill.Shared\obj\ProxyFill.Shared.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Pokemon Image Renamer\obj\Pokemon Image Renamer.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Pokemon Image Renamer\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Pokemon Image Renamer\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Image Sorter\bin\Debug\net6.0\Image Sorter.deps.json" />
+      <_ContentIncludedByDefault Remove="Image Sorter\bin\Debug\net6.0\Image Sorter.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="Image Sorter\obj\Image Sorter.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Image Sorter\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Image Sorter\obj\project.packagespec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="ProxyFill.Shared\ProxyFill.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ViewModel\" />
     </ItemGroup>
 </Project>

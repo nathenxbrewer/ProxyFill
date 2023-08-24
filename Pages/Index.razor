@@ -1,8 +1,11 @@
 ﻿@page "/"
-@using ProxyFill.ViewModel
+@using ProxyFill.Shared.ViewModel
+@using ProxyFill.Model
+@using ProxyFill.Domain.Services
 @inject HttpClient Http
 @inject IJSRuntime JSRuntime
 @inject ISnackbar SnackBar
+@inject PokemonAPIService PokemonAPIService
 
 @code {
 
@@ -20,8 +23,7 @@
 </MudOverlay>
 @if (!ListSubmitted)
 {
-    <MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
-    <MudText Class="mb-8">Welcome to ProxyFill!</MudText>
+    <MudText Typo="Typo.h3" GutterBottom="true">Welcome to ProxyFill!</MudText>
     <MudAlert Severity="Severity.Normal">
         Please use PTCGO format, ie "1 Bulbasaur DET 1"
     </MudAlert>
@@ -59,7 +61,7 @@ else
                                             <MudGrid Justify="Justify.SpaceBetween">
                                                 <MudItem xs="4">
                                                     <MudMenu Icon="@Icons.Material.Filled.MoreVert">
-                                                        <MudMenuItem Href="https://www.google.com" Target="_blank">Request Card</MudMenuItem>
+                                                        <MudMenuItem Href=@($"https://docs.google.com/forms/d/e/1FAIpQLSf_q7nyLiRk0lVUcZUj2akRTXUu-TEAdPqsYw5l6ZNAbt0wlw/viewform?usp=pp_url&entry.529242700={card.Name}&entry.732728522={card.SetCode}&entry.766556659={card.Number}") Target="_blank">Request Card</MudMenuItem>
                                                         <MudMenuItem>View on TCGPlayer</MudMenuItem>
                                                     </MudMenu>
                                                 </MudItem>

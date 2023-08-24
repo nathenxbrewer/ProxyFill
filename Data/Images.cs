@@ -1,3 +1,5 @@
+using ProxyFill.Model;
+
 namespace ProxyFill;
 
 public static class Data
@@ -42,26 +44,5 @@ public class ProxyCard
     public DateTime DateAdded { get; set; } = DateTime.Now;
 }
 
-public class Image
-{
-    public string Name { get; set; }
-    public string Author { get; set; }
-    public string Thumbnail { get; set; }
-    public string Download { get; set; }
-}
 
-public class GoogleDriveImage : Image
-{
-    public GoogleDriveImage(string driveId)
-    {
-        Thumbnail = $"https://lh3.googleusercontent.com/d/{driveId}";
-        Download = $"https://drive.google.com/uc?export=download&id={driveId}";
-    }
-    public GoogleDriveImage(string name, string author, string driveId)
-    {
-        Name = name;
-        Author = author;
-        Thumbnail = $"https://lh3.googleusercontent.com/d/{driveId}";
-        Download = $"https://drive.google.com/uc?export=download&id={driveId}";
-    }
-}
+

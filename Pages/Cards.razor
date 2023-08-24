@@ -1,11 +1,13 @@
 ﻿@page "/cards"
 @using ProxyFill.Shared.Dialog
 @using Newtonsoft.Json
+@using ProxyFill.Domain.Services
 @using ProxyFill.Model
 @inject IDialogService DialogService
 @inject ISnackbar Snackbar
 @inject IJSRuntime JSRuntime
 @inject HttpClient Http
+@inject PokemonAPIService PokemonAPIService
 
 @code
 {
@@ -18,8 +20,9 @@
 }
 
 <PageTitle>Cards</PageTitle>
-<MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Class="mb-4" OnClick="OnAddCardClicked">Add Card</MudButton>
-<MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Class="mb-4" OnClick="OnAddDriveClicked">Add Drive Folder</MudButton>
+@* <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Class="mb-4" OnClick="OnAddCardClicked">Add Card</MudButton> *@
+@* <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Class="mb-4" OnClick="OnAddDriveClicked">Add Drive Folder</MudButton> *@
+<MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.QuestionMark" Class="mb-4" Href="https://forms.gle/PEBRTYCVecE28MDf8" Target="_blank">Request Card</MudButton>
 <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Share" Class="mb-4" OnClick="OnExportCardsClicked">Export Cards</MudButton>
 <MudTable Items="@ProxyCards"  Hover="true" Bordered="true" Filter="new Func<ProxyCard,bool>(FilterFunc1)" @bind-SelectedItem="selectedItem">
     <ToolBarContent>
