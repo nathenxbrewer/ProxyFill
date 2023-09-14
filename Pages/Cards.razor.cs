@@ -82,11 +82,17 @@ public partial class Cards
                 url = $"https://www.googleapis.com/drive/v3/files?q={query}&key={apiKey}&pageToken={list.nextPageToken}";
                 var newList = await httpclient.GetFromJsonAsync<DriveSearchFileResponse>(url);
                 list.files = list.files.Concat(newList.files).ToArray();
+                if (nextPageToken == newList.nextPageToken)
+                {
+                    break;
+                }
+                
                 nextPageToken = newList.nextPageToken;
             }
             
             var filesList = new List<ProxyFill.Model.File>();
-            foreach (var record in list.files)
+            var files = list.files.Distinct().ToList();
+            foreach (var record in files)
             {
                 if (record.mimeType == "image/png")
                 {

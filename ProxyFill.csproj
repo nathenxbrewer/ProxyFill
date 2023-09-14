@@ -30,14 +30,12 @@
       <Content Remove="Companion.Console\**" />
       <Content Remove="Companion.MacOS\**" />
       <Content Remove="ProxyFill.Shared\**" />
-      <Content Update="wwwroot\data\cards_old.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
       <Content Remove="Pokemon Image Renamer\**" />
-      <Content Update="wwwroot\data\cards.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
       <Content Remove="Image Sorter\**" />
+      <Content Remove="ProxyFill-Companion\**" />
+      <Content Update="wwwroot\data\cards.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
@@ -48,6 +46,7 @@
       <Compile Remove="ProxyFill.Shared\**" />
       <Compile Remove="Pokemon Image Renamer\**" />
       <Compile Remove="Image Sorter\**" />
+      <Compile Remove="ProxyFill-Companion\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -58,6 +57,7 @@
       <EmbeddedResource Remove="ProxyFill.Shared\**" />
       <EmbeddedResource Remove="Pokemon Image Renamer\**" />
       <EmbeddedResource Remove="Image Sorter\**" />
+      <EmbeddedResource Remove="ProxyFill-Companion\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -68,6 +68,7 @@
       <None Remove="ProxyFill.Shared\**" />
       <None Remove="Pokemon Image Renamer\**" />
       <None Remove="Image Sorter\**" />
+      <None Remove="ProxyFill-Companion\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -109,6 +110,42 @@
       <_ContentIncludedByDefault Remove="Image Sorter\obj\Image Sorter.csproj.nuget.dgspec.json" />
       <_ContentIncludedByDefault Remove="Image Sorter\obj\project.assets.json" />
       <_ContentIncludedByDefault Remove="Image Sorter\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\bin\Debug\net7.0-android\ProxyFill Companion.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\bin\Debug\net7.0-ios\iossimulator-x64\ProxyFill Companion.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\ProxyFill Companion.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\ProxyFillCompanion.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-android\staticwebassets.build.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-android\staticwebassets.development.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-android\staticwebassets.pack.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-android\staticwebassets.publish.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\actool\cloned-assets\Assets.xcassets\appicon.appiconset\Contents.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\project.razor.vs.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\staticwebassets.build.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\staticwebassets.development.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\staticwebassets.pack.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\staticwebassets.publish.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\staticwebassets.build.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\staticwebassets.development.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\staticwebassets.pack.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\staticwebassets.publish.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\ProxyFill Companion.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\ProxyFillCompanion.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Release\net7.0-windows10.0.19041.0\win10-x64\staticwebassets.build.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Release\net7.0-windows10.0.19041.0\win10-x64\staticwebassets.development.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Release\net7.0-windows10.0.19041.0\win10-x64\staticwebassets.pack.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\obj\Release\net7.0-windows10.0.19041.0\win10-x64\staticwebassets.publish.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\Properties\launchSettings.json" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\Main.razor" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\Pages\Counter.razor" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\Pages\FetchData.razor" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\Pages\Index.razor" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\Shared\MainLayout.razor" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\Shared\NavMenu.razor" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\Shared\SurveyPrompt.razor" />
+      <_ContentIncludedByDefault Remove="ProxyFill-Companion\ProxyFill Companion\_Imports.razor" />
     </ItemGroup>
 
     <ItemGroup>
