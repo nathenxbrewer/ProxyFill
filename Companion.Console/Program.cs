@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 
 using System.Net;
 using System.Drawing;
@@ -91,8 +91,8 @@ static void AutoFill()
     driver.Url = "https://www.drivethrucards.com/login.php";
     var orLogInLink = driver.FindElement(By.XPath("//*[@id=\"create_account_box\"]/div[2]/span/span[1]/a"));
     orLogInLink.Click();
-    driver.FindElement(By.Id("login_email_address")).SendKeys("nathenbrewer@gmail.com");
-    driver.FindElement(By.Id("login_password")).SendKeys("Brooke091919!");
+    driver.FindElement(By.Id("login_email_address")).SendKeys("email");
+    driver.FindElement(By.Id("login_password")).SendKeys("password");
     driver.FindElement(By.Id("loginbutton")).Click();
     Thread.Sleep(TimeSpan.FromSeconds(3));
     driver.Navigate().GoToUrl("https://www.drivethrucards.com/builder/deck/images/back/64baff58d1078");
