@@ -1,6 +1,7 @@
 using System.Data;
 using System.Net.Http.Json;
 using System.Reflection.Metadata.Ecma335;
+using Microsoft.AspNetCore.Components;
 using MudBlazor;
 using Newtonsoft.Json;
 using PokemonTcgSdk.Standard.Infrastructure.HttpClients;
@@ -60,7 +61,7 @@ public partial class Cards
     private async Task OnAddDriveClicked()
     {
         var cardsAdded = 0;
-       
+        var invalidCards = new List<PTCGOCard>();
         var options = new DialogOptions { CloseOnEscapeKey = true, MaxWidth = MaxWidth.Medium, FullWidth = true};
         var dialog = DialogService.Show<AddDriveFolderDialog>("Add Drive Folder", options);
         var result = await dialog.Result;
@@ -126,8 +127,12 @@ public partial class Cards
             {
                 var ptcgoCard = Helpers.ParsePTCGO(Path.GetFileNameWithoutExtension(file.name));
 
-                if (ptcgoCard == null) 
+                if (ptcgoCard == null)
+                {
+                    invalidCards.Add(ptcgoCard);
                     continue;
+                }
+                    
                 
                 //check if we already have this file. 
                 var downloadURL = new GoogleDriveImage(file.id);
@@ -135,7 +140,11 @@ public partial class Cards
                 
                 var matchingCard = await PokemonAPIService.GetPokemonCard(ptcgoCard.Name, ptcgoCard.SetCode, ptcgoCard.CardNumber);
                 if (matchingCard == null)
-                    continue;
+                {
+                    invalidCards.Add(ptcgoCard);
+                    continue; 
+                }
+                
                 
                 ProxyCards.Add(new()
                 {
@@ -146,6 +155,45 @@ public partial class Cards
                 cardsAdded++;
             }
             Snackbar.Add($"Done adding Drive folder, {cardsAdded}/{filesList.Count} added.", Severity.Success);
+            // if (invalidCards.Any())
+            // {
+            //     var invalidCardsResult = await DialogService.ShowMessageBox(
+            //         "Correct Cards?", 
+            //         $"Would you like to fix the invalid cards? ({invalidCards.Count}/ {filesList.Count}) cards)", 
+            //         yesText:"Yes", cancelText:"No");
+            //     if (invalidCardsResult != null && invalidCardsResult.Value)
+            //     {
+            //         foreach (var card in invalidCards)
+            //         {
+            //             var parameter = new DialogParameters();
+            //             parameter.Add("EditCard", card);
+            //             
+            //             var editCardDialog = DialogService.Show<AddCardDialog>();
+            //             var editCardDialogResult = await dialog.Result;
+            //             if (!editCardDialogResult.Cancelled)
+            //             {
+            //                 var newCardInfo = editCardDialogResult.Data as ProxyCard;
+            //                 ProxyCards.Add(newCardInfo);
+            //                 Snackbar.Add("Card added successfully", Severity.Success);
+            //                 StateHasChanged();
+            //             }
+            //         }
+            //     }
+            //     
+            // }
+
+            if (invalidCards.Any())
+            {
+                var invalidCardStrings = new List<string>();
+                foreach (var card in invalidCards)
+                {
+                    invalidCardStrings.Add($"{card.Name} {card.SetCode} {card.CardNumber}");
+                }
+                await DialogService.ShowMessageBox(
+                    "Invalid Cards", 
+                    (MarkupString)$"Here are the invalid cards:<br />{string.Join("<br />", invalidCardStrings)}", 
+                    yesText:"Ok");
+            }
         }
     }
     
