@@ -15,15 +15,16 @@ App is hosted via Github Pages <a href="https://nathenxbrewer.github.io/ProxyFil
 - [ ] Show popup when card image is clicked with detailed info.
 - [ ] Allow user to choose card back image(s).
 
-### Set Progress
-## Scarlet & Violet
+# Set Progress
+Scarlet & Violet
 - [ ] 151 (MEW)
 - [ ] Obsidian Flames (OBF)
 - [x] Paldea Evolved (SV2)
 - [ ] Scarlet & Violet Energy (SVE)
 - [ ] Scarlet & Violet (SVI)
 - [ ] Scarlet & Violet Promos (SVP)
-## Sword & Shield
+      
+Sword & Shield
 - [ ] Crown Zenith (CRZ)
 - [ ] Silver Tempest (SIT)
 - [ ] Lost Origin (LOR)
