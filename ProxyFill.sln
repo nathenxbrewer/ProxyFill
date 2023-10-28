@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemon Image Renamer", "Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Image Sorter", "Image Sorter\Image Sorter.csproj", "{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyFill Companion", "ProxyFill Companion\ProxyFill Companion.csproj", "{2F4111DE-E448-44C4-86DF-43457A34DD23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05CC2BC8-A1FA-405E-9F3F-E89B5FB8D449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F4111DE-E448-44C4-86DF-43457A34DD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F4111DE-E448-44C4-86DF-43457A34DD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F4111DE-E448-44C4-86DF-43457A34DD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F4111DE-E448-44C4-86DF-43457A34DD23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

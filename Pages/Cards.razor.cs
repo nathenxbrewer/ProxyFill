@@ -137,20 +137,26 @@ public partial class Cards
                 //check if we already have this file. 
                 var downloadURL = new GoogleDriveImage(file.id);
                 if(ProxyCards.Select(x=>x.Image).Any(x=>x.Download == downloadURL.Download)) continue;
-                
-                var matchingCard = await PokemonAPIService.GetPokemonCard(ptcgoCard.Name, ptcgoCard.SetCode, ptcgoCard.CardNumber);
-                if (matchingCard == null)
+                try
                 {
+                    var matchingCard = await PokemonAPIService.GetPokemonCard(ptcgoCard.Name, ptcgoCard.SetCode, ptcgoCard.CardNumber);
+                    if (matchingCard == null)
+                    {
+                        invalidCards.Add(ptcgoCard);
+                        continue; 
+                    }
+                    ProxyCards.Add(new()
+                    {
+                        Name = matchingCard.Name, SetCode = matchingCard.Set.PtcgoCode ?? matchingCard.Set.Id.ToUpper(), Number = matchingCard.Number, 
+                        Image = new GoogleDriveImage(file.name,author, file.id)
+                    });
+                }
+                catch {
                     invalidCards.Add(ptcgoCard);
-                    continue; 
+                    Console.WriteLine($"Failed to add card: {file.name}");
                 }
                 
-                
-                ProxyCards.Add(new()
-                {
-                    Name = matchingCard.Name, SetCode = matchingCard.Set.PtcgoCode ?? matchingCard.Set.Id.ToUpper(), Number = matchingCard.Number, 
-                    Image = new GoogleDriveImage(file.name,author, file.id)
-                });
+
                 Console.WriteLine($"Added Card: {file.name}");
                 cardsAdded++;
             }
