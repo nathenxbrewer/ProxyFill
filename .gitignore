@@ -399,3 +399,5 @@ FodyWeavers.xsd
 .DS_Store
 global.json
 global.json
+.idea/.idea.ProxyFill/.idea/vcs.xml
+Properties/launchSettings.json

@@ -8,6 +8,8 @@
             </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="PokemonTcgSdk" Version="2.4.1" />
+      <Reference Include="PokemonTcgSdk.Standard">
+        <HintPath>lib\PokemonTcgSdk.Standard.dll</HintPath>
+      </Reference>
     </ItemGroup>
 </Project>

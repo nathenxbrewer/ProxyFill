@@ -936,19 +936,6 @@
     "DateAdded": "2023-07-27T22:28:58.189-04:00"
   },
   {
-    "Name": "Super Rod",
-    "Number": "188",
-    "SetCode": "SV2",
-    "CardId": null,
-    "Image": {
-      "Name": "Super Rod PAL 188.png",
-      "Author": "BlazorSharp",
-      "Thumbnail": "https://lh3.googleusercontent.com/d/1DVDQIDJZLE4NpUfm72BtCVZeF5qfVwRj",
-      "Download": "https://drive.google.com/uc?export=download&id=1DVDQIDJZLE4NpUfm72BtCVZeF5qfVwRj"
-    },
-    "DateAdded": "2023-07-28T10:29:47.509-04:00"
-  },
-  {
     "Name": "Basic Grass Energy",
     "Number": "1",
     "SetCode": "SVE",

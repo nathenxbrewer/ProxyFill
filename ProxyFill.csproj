@@ -8,12 +8,14 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'Mudblazor.Template' " />
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="12.0.1" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.7"/>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.7" PrivateAssets="all"/>
-        <PackageReference Include="MudBlazor" Version="6.0.13"/>
-        <PackageReference Include="PokemonTcgSdk" Version="2.4.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.7" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.7" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0-rc.2.23479.6" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0-rc.2.23479.6" />
+        <PackageReference Include="MudBlazor" Version="6.0.13" />
         <PackageReference Include="Selenium.WebDriver" Version="4.10.0" />
         <PackageReference Include="Syncfusion.Pdf.Net.Core" Version="22.1.37" />
     </ItemGroup>
@@ -154,5 +156,11 @@
 
     <ItemGroup>
       <Folder Include="ViewModel\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="PokemonTcgSdk.Standard">
+        <HintPath>lib\PokemonTcgSdk.Standard.dll</HintPath>
+      </Reference>
     </ItemGroup>
 </Project>
