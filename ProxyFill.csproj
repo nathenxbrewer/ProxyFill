@@ -71,6 +71,9 @@
       <None Remove="Pokemon Image Renamer\**" />
       <None Remove="Image Sorter\**" />
       <None Remove="ProxyFill-Companion\**" />
+      <None Update="lib\PokemonTcgSdk.Standard.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>
