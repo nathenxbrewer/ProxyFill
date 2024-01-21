@@ -4,8 +4,7 @@
 A web app for automating printing PKMN proxy cards using DriveThruCards.
 This app is in beta so expect some potential bugs. Check the Releases for the desktop companion app. 
 
-> **Note**
->The companion app only downloads images at this time. I am still working on the DTC automation. Please reach out if you have Selenium experience.
+Grab the Companion app from Releases in order to generate a PDF for use with DriveThruCards.
 
 App is hosted via Github Pages <a href="https://nathenxbrewer.github.io/ProxyFill/" target="_blank">Here</a>
 
