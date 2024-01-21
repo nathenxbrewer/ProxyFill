@@ -20,7 +20,7 @@ Scarlet & Violet
 - [ ] Obsidian Flames (OBF)
 - [x] Paldea Evolved (SV2)
 - [ ] Scarlet & Violet Energy (SVE)
-- [ ] Scarlet & Violet (SVI)
+- [x] Scarlet & Violet (SVI)
 - [ ] Scarlet & Violet Promos (SVP)
       
 Sword & Shield
